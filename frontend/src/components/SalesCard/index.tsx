@@ -9,7 +9,7 @@ import NotificationButton from '../NotificationButton';
 import './styles.css';
 
 function SalesCard() {
-    const min = new Date(new Date().setDate(new Date().getDate() - 365));
+    const min = new Date(new Date().setDate(new Date().getDate() - 30));
     const max = new Date();
 
     const [minDate, setMinDate] = useState(min);
@@ -29,34 +29,34 @@ function SalesCard() {
     },[minDate, maxDate]);
 
     return (
-        <div className="dsmeta-card">
-            <h2 className="dsmeta-sales-title">Vendas</h2>
-            <div>
-                <div className="dsmeta-form-control-container">
+        <div className="sales-card">
+            <h2 className="sales-title">Sales</h2>
+            <div className="sales-form-control-container">
+                <div className="sales-form-control-content">
                     <DatePicker selected={minDate}
                         onChange={(date: Date) => setMinDate(date)}
-                        className="dsmeta-form-control"
+                        className="sales-form-control"
                         dateFormat="dd/MM/yyyy" />
                 </div>
-                <div className="dsmeta-form-control-container">
+                <div className="sales-form-control-content">
                     <DatePicker selected={maxDate}
                         onChange={(date: Date) => setMaxDate(date)}
-                        className="dsmeta-form-control"
+                        className="sales-form-control"
                         dateFormat="dd/MM/yyyy" />
                 </div>
             </div>
 
             <div>
-                <table className="dsmeta-sales-table">
+                <table className="sales-table">
                     <thead>
                         <tr>
                             <th className="show992">ID</th>
-                            <th className="show576">Data</th>
-                            <th>Vendedor</th>
-                            <th className="show992">Visitas</th>
-                            <th className="show992">Vendas</th>
-                            <th>Total</th>
-                            <th>Notificar</th>
+                            <th className="show576">Date</th>
+                            <th>Seller</th>
+                            <th className="show992">Visits</th>
+                            <th className="show992">Total sales</th>
+                            <th>Total ($)</th>
+                            <th>Notify</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -68,9 +68,9 @@ function SalesCard() {
                                     <td>{sale.sellerName}</td>
                                     <td className="show992">{sale.visited}</td>
                                     <td className="show992">{sale.deals}</td>
-                                    <td>R$ {sale.amount.toFixed(2)}</td>
+                                    <td>$ {sale.amount.toFixed(1)}</td>
                                     <td>
-                                        <div className="dsmeta-red-btn-container">
+                                        <div className="sales-red-btn-container">
                                             <NotificationButton saleId={sale.id} />
                                         </div>
                                     </td>

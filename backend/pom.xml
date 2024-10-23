@@ -10,10 +10,10 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.acurvelo</groupId>
-	<artifactId>dsmeta</artifactId>
+	<artifactId>springboot-sales-app</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>dsmeta</name>
-	<description>Projeto dev superior com spring e react</description>
+	<name>springboot sales app</name>
+	<description>Project Java with springboot framework</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -50,6 +50,11 @@
 			<groupId>com.twilio.sdk</groupId>
 			<artifactId>twilio</artifactId>
 			<version>9.1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
 		</dependency>
 	</dependencies>
 

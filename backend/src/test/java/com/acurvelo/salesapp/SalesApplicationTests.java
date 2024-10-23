@@ -1,10 +1,10 @@
-package com.acurvelo.dsmeta;
+package com.acurvelo.salesapp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DsmetaApplicationTests {
+class SalesApplicationTests {
 
 	@Test
 	void contextLoads() {

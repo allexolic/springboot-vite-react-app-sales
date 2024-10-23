@@ -1,4 +1,4 @@
-package com.acurvelo.dsmeta.config;
+package com.acurvelo.salesapp.config;
 
 import java.util.Arrays;
 

@@ -4,12 +4,12 @@ import './styles.css';
 function Header() {
     return (
         <header>
-            <div className="dsmeta-logo-container">
-                <img src={logo} alt="DsMeta" />
-                <h1>DSMeta</h1>
+            <div className="sales-logo-container">
+                <img src={logo} alt="sales" />
+                <h1>Sales APP</h1>
                 <p>
-                    Desenvolvido por
-                    <a href="https://github.com/allexolic">allexolic</a>
+                    Developed by
+                    <a href="https://github.com/allexolic" target='_blank'> allexolic</a>
                 </p>
             </div>
         </header>

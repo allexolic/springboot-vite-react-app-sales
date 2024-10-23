@@ -1,6 +1,6 @@
-package com.acurvelo.dsmeta.controllers;
+package com.acurvelo.salesapp.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.acurvelo.salesapp.services.SalesService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,25 +9,26 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.acurvelo.dsmeta.entities.Sale;
-import com.acurvelo.dsmeta.services.SaleService;
-import com.acurvelo.dsmeta.services.SmsService;
+import com.acurvelo.salesapp.entities.Sales;
+import com.acurvelo.salesapp.services.SmsService;
 
 @RestController
 @RequestMapping(value = "/sales")
-public class SaleController {
-	
-	@Autowired
-	private SaleService saleService;
+public class SalesController {
 
-	@Autowired
+	private SalesService salesService;
 	private SmsService smsService;
-	
+
+	public SalesController(SalesService salesService, SmsService smsService){
+		this.salesService = salesService;
+		this.smsService = smsService;
+	}
+
 	@GetMapping
-	public Page<Sale> findSales(@RequestParam(value = "minDate", defaultValue = "") String minDate,
+	public Page<Sales> findSales(@RequestParam(value = "minDate", defaultValue = "") String minDate,
 								@RequestParam(value = "maxDate", defaultValue = "") String maxDate, Pageable pageable) {
 		
-		return saleService.findSales(minDate, maxDate, pageable);
+		return salesService.findSales(minDate, maxDate, pageable);
 	}
 
 	@GetMapping("/{id}/notification")
